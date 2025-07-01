@@ -1,4 +1,7 @@
-with open("numbers.txt") as f:
-    numbers = list(map(int, f.read().split()))
-o_rta = sum(numbers) / len(numbers)
-print("O‘rtacha qiymat:", o_rta)
+def read_numbers():
+    with open("numbers.txt") as f:
+        return list(map(int, f.read().split()))
+
+def task5():
+    nums = read_numbers()
+    return sum(nums) / len(nums)

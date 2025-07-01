@@ -1,6 +1,10 @@
-with open("numbers.txt") as f:
-    numbers = list(map(int, f.read().split()))
-with open("sorted_numbers.txt", "w") as f:
-    for n in sorted(numbers):
-        f.write(str(n) + "\n")
-print("Saralangan sonlar sorted_numbers.txt fayliga yozildi.")
+def read_numbers():
+    with open("numbers.txt") as f:
+        return list(map(int, f.read().split()))
+
+def task10():
+    sorted_nums = sorted(read_numbers())
+    with open("sorted_numbers.txt", "w") as f:
+        for n in sorted_nums:
+            f.write(str(n) + "\n")
+    return sorted_nums

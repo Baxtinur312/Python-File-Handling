@@ -1,7 +1,8 @@
-with open("grades.csv") as f:
-    students = [line.split(",") for line in f]
-with open("high_scores.csv", "w") as f:
-    for name, grade in students:
-        if grade.strip() == "5":
-            f.write(f"{name},{grade}")
-print("5 olganlar high_scores.csv fayliga yozildi.")
+
+def task7():
+    rows = read_grades()
+    fives = [x for x in rows if x[1] == '5']
+    with open("high_scores.csv", "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerows(fives)
+    return fives

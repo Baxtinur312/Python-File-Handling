@@ -1,3 +1,7 @@
-with open("students.txt") as f:
-    names = f.read().splitlines()
-print("Ismlar soni:", len(names))
+def read_names():
+    with open("students.txt") as f:
+        return f.read().splitlines()
+
+def task2():
+    return len(read_names())
+
